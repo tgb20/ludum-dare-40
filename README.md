@@ -26,3 +26,5 @@ Woke up this morning and started right away. Unfortunatly I have work this morni
 Did this while at work. Allows for the papers to highlight to let you know what you are selecting and added a basic scoring system. Unfortunatly this does not 100% work as when papers fall over if they fall together it still counts as a stack.
 # Added Door, Mat, and Bed
 I removed the old scoring system, now it will be time based, you have to sleep in a certain amount of time, and the mail arrives at a certain time. I made it so you have to sleep to get a delivery, and each delivery has one more paper stack than the last. Next steps will be figuring out a sleep transition and setting up the timing.
+# Working Timer and Game Over
+I have added 2 times, one for sleeping and one for delievery. I also added the ability to step on and crush papers, which remove 1 seconds of time everytime one is destroyed. The next step will be adding the heater and the ability for paper to catch on fire.
