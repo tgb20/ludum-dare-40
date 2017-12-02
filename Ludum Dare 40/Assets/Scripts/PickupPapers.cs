@@ -12,9 +12,12 @@ public class PickupPapers : MonoBehaviour {
 
     GameObject carriedPaper;
 
+    public GameObject spray;
+
 	// Use this for initialization
 	void Start () {
-        
+        spray.transform.position = spray.transform.position + playerCamera.transform.forward * distance;
+        spray.transform.parent = playerCamera.transform;
 	}
 	
 	// Update is called once per frame
@@ -28,15 +31,14 @@ public class PickupPapers : MonoBehaviour {
 
     void pickup(){
         if(Input.GetMouseButtonDown(0)){
-            int x = Screen.width / 2;
-            int y = Screen.height / 2;
 
-            Ray ray = playerCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
+            Ray ray = playerCamera.GetComponent<Camera>().ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
 
             RaycastHit hit;
 
             if(Physics.Raycast(ray, out hit)){
                 Newspaper p = hit.collider.GetComponent<Newspaper>();
+                Extinguisher e = hit.collider.GetComponent<Extinguisher>();
                 if(p != null){
                     carrying = true;
                     carriedPaper = p.gameObject;
@@ -44,6 +46,13 @@ public class PickupPapers : MonoBehaviour {
                     p.transform.parent = playerCamera.transform;
                     p.transform.position = playerCamera.transform.position + playerCamera.transform.forward * distance;
                     p.resetPosition();
+                }
+                if(e != null){
+                    carrying = true;
+                    carriedPaper = e.gameObject;
+                    e.GetComponent<Rigidbody>().isKinematic = true;
+                    e.transform.parent = playerCamera.transform;
+                    e.transform.position = playerCamera.transform.position + playerCamera.transform.forward * distance;
                 }
             }
 
@@ -55,6 +64,14 @@ public class PickupPapers : MonoBehaviour {
     void checkDrop(){
         if(Input.GetMouseButtonDown(0)){
             dropPaper();
+        }
+        if(Input.GetMouseButton(1) && carrying == true){
+            if (carriedPaper.GetComponent<Extinguisher>() != null)
+            {
+                spray.SetActive(true);
+            }
+        }else{
+            spray.SetActive(false);
         }
     }
 

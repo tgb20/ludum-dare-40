@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Newspaper : MonoBehaviour {
 
-	public Renderer rend;
+	Renderer rend;
 
 	Color baseColor;
 
@@ -84,6 +84,9 @@ public class Newspaper : MonoBehaviour {
         }
         if(other.gameObject.tag == "Heater"){
             heatUp = true;
+        }
+        if(other.gameObject.tag == "Spray"){
+            heat = heat/4;
         }
     }
     private void OnTriggerExit(Collider other)
