@@ -46,6 +46,7 @@ public class PickupPapers : MonoBehaviour {
                     carrying = true;
                     carriedPaper = p.gameObject;
                     p.GetComponent<Rigidbody>().isKinematic = true;
+					p.resetPosition ();
                 }
             }
 
