@@ -30,3 +30,5 @@ I removed the old scoring system, now it will be time based, you have to sleep i
 I have added 2 times, one for sleeping and one for delievery. I also added the ability to step on and crush papers, which remove 1 seconds of time everytime one is destroyed. The next step will be adding the heater and the ability for paper to catch on fire.
 ## Heater
 Added a working heater, boxes can chain together to spread heat and when they hit 20% heated up you can only put them out with the fire extingiusher.
+## Fire Extinguisher
+Added a extinguisher that cuts each boxes heat down to 25% of what it was. 
