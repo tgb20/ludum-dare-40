@@ -27,6 +27,7 @@ public class Bed : MonoBehaviour {
         gameManager.sleepTime = 60;
         gameManager.deliveryTime = 30;
         gameManager.hasDelivered = false;
+        gameManager.numDays += 1;
     }
 
 

@@ -15,6 +15,9 @@ public class GameController : MonoBehaviour {
 
     public bool hasDelivered;
 
+    public int numDays = 1;
+
+
 
 	void Update () {
         if (!hasDelivered)

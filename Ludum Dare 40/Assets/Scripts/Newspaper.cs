@@ -19,6 +19,11 @@ public class Newspaper : MonoBehaviour {
     bool heatUp;
 
 
+    public float lightVal;
+
+    bool lightUp;
+
+
     GameController gameManager;
 
 	void Start(){
@@ -44,7 +49,17 @@ public class Newspaper : MonoBehaviour {
             heat -= Time.deltaTime * 2;
         }
 
-        rend.material.SetColor("_EmissionColor", new Vector4(heat/100,0,0,heat/100));
+        if(lightUp){
+            lightVal += Time.deltaTime * 2;
+        }
+        else if(lightVal > 0){
+            lightVal -= Time.deltaTime * 2;
+        }
+        if(lightVal > 0){
+            rend.material.SetColor("_EmissionColor", new Vector4(lightVal / 100, lightVal / 100, 0, lightVal / 100));
+        }else if(heat > 0){
+            rend.material.SetColor("_EmissionColor", new Vector4(heat / 100, 0, 0, heat / 100));
+        }
 
 
         if(heat > 20){
@@ -62,6 +77,16 @@ public class Newspaper : MonoBehaviour {
             gameManager.sleepTime -= 1;
             Destroy(gameObject);
         }
+
+        if(lightVal > 100){
+            if (!gameManager.hasDelivered)
+            {
+                gameManager.deliveryTime -= 1;
+            }
+            gameManager.sleepTime -= 1;
+            Destroy(gameObject);
+        }
+
 
 
 	}
@@ -82,17 +107,25 @@ public class Newspaper : MonoBehaviour {
             gameManager.sleepTime -= 1;
             Destroy(gameObject);
         }
-        if(other.gameObject.tag == "Heater"){
+        else if(other.gameObject.tag == "Heater"){
             heatUp = true;
         }
-        if(other.gameObject.tag == "Spray"){
-            heat = heat/4;
+        else if(other.gameObject.tag == "Spray"){
+            heat = heat/2;
+        }
+        else if (other.gameObject.tag == "Sunlight")
+        {
+            lightUp = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if(other.gameObject.tag == "Heater"){
             heatUp = false;
+        }
+        if (other.gameObject.tag == "Sunlight")
+        {
+            lightUp = false;
         }
     }
 

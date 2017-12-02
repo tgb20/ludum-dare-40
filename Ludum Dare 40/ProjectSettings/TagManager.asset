@@ -8,6 +8,7 @@ TagManager:
   - Foot
   - Heater
   - Spray
+  - Sunlight
   layers:
   - Default
   - TransparentFX
