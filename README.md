@@ -32,3 +32,5 @@ I have added 2 times, one for sleeping and one for delievery. I also added the a
 Added a working heater, boxes can chain together to spread heat and when they hit 20% heated up you can only put them out with the fire extingiusher.
 ## Fire Extinguisher
 Added a extinguisher that cuts each boxes heat down to 25% of what it was. 
+## Working Game with Curve
+At this point the game could be called a game. There is an ending and it gets more intense as it goes on. I added a curve to the box spawning. The final steps will be creating a score system (total papers at end of game) and adding the window for rain. Going to take a break now to refresh myself. By midnight tonight I hope to have the rain, scoring, and a basic menu ready. Tomorrow I will focus entirely on cosmetics, starting with models and then adding sound.
