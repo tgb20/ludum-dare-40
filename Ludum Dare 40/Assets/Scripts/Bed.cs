@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreController : MonoBehaviour {
+public class Bed : MonoBehaviour {
 
 
-	public int score;
+
+    public Door door;
 
 	// Use this for initialization
 	void Start () {
@@ -16,4 +17,11 @@ public class ScoreController : MonoBehaviour {
 	void Update () {
 		
 	}
+
+
+    public void Sleep(){
+        door.hasRecieved = false;
+    }
+
+
 }
