@@ -11,6 +11,8 @@ public class Door : MonoBehaviour {
 
     public bool hasRecieved;
 
+    public AnimationCurve boxCurve;
+
     // Use this for initialization
     void Start()
     {
@@ -30,7 +32,7 @@ public class Door : MonoBehaviour {
         {
             boxes += 1;
             hasRecieved = true;
-            mat.SpawnNewDay(boxes);
+            mat.SpawnNewDay(Mathf.RoundToInt(boxCurve.Evaluate(boxes)));
             gameManager.hasDelivered = true;
         }
     }

@@ -525,6 +525,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114908075081686658, guid: cb88df0fb2d754a05bc4509ca59bd4aa,
+        type: 2}
+      propertyPath: boxCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4997850006983930, guid: cb88df0fb2d754a05bc4509ca59bd4aa, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -567,6 +572,46 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 957642572}
+    - target: {fileID: 114908075081686658, guid: cb88df0fb2d754a05bc4509ca59bd4aa,
+        type: 2}
+      propertyPath: boxCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114908075081686658, guid: cb88df0fb2d754a05bc4509ca59bd4aa,
+        type: 2}
+      propertyPath: boxCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114908075081686658, guid: cb88df0fb2d754a05bc4509ca59bd4aa,
+        type: 2}
+      propertyPath: boxCurve.m_Curve.Array.data[1].time
+      value: 25.046984
+      objectReference: {fileID: 0}
+    - target: {fileID: 114908075081686658, guid: cb88df0fb2d754a05bc4509ca59bd4aa,
+        type: 2}
+      propertyPath: boxCurve.m_Curve.Array.data[1].value
+      value: 101.39983
+      objectReference: {fileID: 0}
+    - target: {fileID: 114908075081686658, guid: cb88df0fb2d754a05bc4509ca59bd4aa,
+        type: 2}
+      propertyPath: boxCurve.m_Curve.Array.data[1].inSlope
+      value: 3.7495747
+      objectReference: {fileID: 0}
+    - target: {fileID: 114908075081686658, guid: cb88df0fb2d754a05bc4509ca59bd4aa,
+        type: 2}
+      propertyPath: boxCurve.m_Curve.Array.data[1].outSlope
+      value: 3.7495747
+      objectReference: {fileID: 0}
+    - target: {fileID: 114908075081686658, guid: cb88df0fb2d754a05bc4509ca59bd4aa,
+        type: 2}
+      propertyPath: boxCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114908075081686658, guid: cb88df0fb2d754a05bc4509ca59bd4aa,
+        type: 2}
+      propertyPath: boxCurve.m_Curve.Array.data[0].value
+      value: -0.026153564
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb88df0fb2d754a05bc4509ca59bd4aa, type: 2}
   m_IsPrefabParent: 0
