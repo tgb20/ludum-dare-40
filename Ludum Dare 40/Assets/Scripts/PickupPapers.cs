@@ -20,17 +20,12 @@ public class PickupPapers : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if(carrying){
-            carry(carriedPaper);
             checkDrop();
         } else{
             pickup();
         }
 	}
 
-
-    void carry(GameObject p){
-        p.transform.position = Vector3.Lerp(p.transform.position, playerCamera.transform.position + playerCamera.transform.forward * distance, Time.deltaTime * smooth);
-    }
     void pickup(){
         if(Input.GetMouseButtonDown(0)){
             int x = Screen.width / 2;
@@ -46,7 +41,9 @@ public class PickupPapers : MonoBehaviour {
                     carrying = true;
                     carriedPaper = p.gameObject;
                     p.GetComponent<Rigidbody>().isKinematic = true;
-					p.resetPosition ();
+                    p.transform.parent = playerCamera.transform;
+                    p.transform.position = playerCamera.transform.position + playerCamera.transform.forward * distance;
+                    p.resetPosition();
                 }
             }
 
@@ -64,6 +61,7 @@ public class PickupPapers : MonoBehaviour {
     void dropPaper(){
         carrying = false;
         carriedPaper.GetComponent<Rigidbody>().isKinematic = false;
+        carriedPaper.transform.parent = null;
         carriedPaper = null;
     }
 

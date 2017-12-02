@@ -10,13 +10,16 @@ public class Newspaper : MonoBehaviour {
 
 	bool inStack;
 
+    GameController gameManager;
+
 	void Start(){
 		rend = GetComponent<Renderer> ();
 		baseColor = rend.material.color;
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameController>();
 	}
 
 	void OnMouseOver(){
-		rend.material.color = Color.red;
+        rend.material.color = Color.yellow;
 	}
 	void OnMouseExit(){
 		rend.material.color = baseColor;
@@ -31,4 +34,18 @@ public class Newspaper : MonoBehaviour {
 
 		transform.rotation = Quaternion.identity;
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Foot"){
+            if (!gameManager.hasDelivered)
+            {
+                gameManager.deliveryTime -= 1;
+            }
+            gameManager.sleepTime -= 1;
+            Destroy(gameObject);
+        }
+    }
+
+
 }

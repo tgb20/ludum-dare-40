@@ -7,6 +7,8 @@ public class Bed : MonoBehaviour {
 
 
     public Door door;
+    public CharacterMove player;
+    public GameController gameManager;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +23,10 @@ public class Bed : MonoBehaviour {
 
     public void Sleep(){
         door.hasRecieved = false;
+        player.resetPostion();
+        gameManager.sleepTime = 60;
+        gameManager.deliveryTime = 30;
+        gameManager.hasDelivered = false;
     }
 
 

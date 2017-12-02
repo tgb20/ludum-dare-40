@@ -11,12 +11,16 @@ public class CharacterMove : MonoBehaviour {
     public float jumpHeight = 2.0f;
     private bool grounded = false;
 
+    Vector3 orginPos;
+    Quaternion originRot;
 
     Rigidbody rigi;
 
     void Awake()
     {
         rigi = GetComponent<Rigidbody>();
+        orginPos = transform.position;
+        originRot = transform.rotation;
 
         rigi.freezeRotation = true;
         rigi.useGravity = false;
@@ -63,4 +67,11 @@ public class CharacterMove : MonoBehaviour {
         // for the character to reach at the apex.
         return Mathf.Sqrt(2 * jumpHeight * gravity);
     }
+
+    public void resetPostion(){
+        transform.rotation = originRot;
+        transform.position = orginPos;
+    }
+
+
 }

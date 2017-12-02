@@ -19,7 +19,8 @@ public class DoorMat : MonoBehaviour {
 
         for (int i = 0; i < count; i++)
         {
-            Instantiate(Resources.Load("Newspaper"), new Vector3(transform.position.x, transform.position.y + 2 + count/2, transform.position.z), Quaternion.identity);
+            GameObject paper =Instantiate(Resources.Load("Newspaper"), new Vector3(transform.position.x, transform.position.y + 2 + i, transform.position.z), Quaternion.identity) as GameObject;
+            paper.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
     }
 

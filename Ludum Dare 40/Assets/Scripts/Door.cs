@@ -5,8 +5,9 @@ using UnityEngine;
 public class Door : MonoBehaviour {
 
     public DoorMat mat;
+    public GameController gameManager;
 
-    int boxes;
+    int boxes = 1;
 
     public bool hasRecieved;
 
@@ -30,6 +31,7 @@ public class Door : MonoBehaviour {
             boxes += 1;
             hasRecieved = true;
             mat.SpawnNewDay(boxes);
+            gameManager.hasDelivered = true;
         }
     }
 }
