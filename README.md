@@ -22,3 +22,5 @@ Within this commit I outline my basic plans for the game. This is all I am doing
 While in bed last night thought of a few more things that would be cool for the game. Ready to start the day!
 # Basic Character and Paper Pickup
 Woke up this morning and started right away. Unfortunatly I have work this morning so I have to stop after only an hour of work but good progress was made! I currently have a working character moving around and the ability to pick up newspapers. My next step will be making it so papers highlight when you can grab them. I also need to implement the point system, 1 point for everypaper that is stacked. Also while writing this I thought of a penalty for not sleeping, the longer you don't sleep more random it is to control the player.
+# Highlighting and Scoring
+Did this while at work. Allows for the papers to highlight to let you know what you are selecting and added a basic scoring system. Unfortunatly this does not 100% work as when papers fall over if they fall together it still counts as a stack.
