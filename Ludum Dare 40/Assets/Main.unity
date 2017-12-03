@@ -2086,7 +2086,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 48fddea6a7a8b47228171b35df6440e8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1287e8f3e956b4f6cb457f55dfb39ce6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.15
   m_Pitch: 1
@@ -2376,6 +2376,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 30, y: 50, z: 0}
+--- !u!1001 &1258781236
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4834444975135164, guid: 6efcf8cd1a5a8432d8649c2451282746, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834444975135164, guid: 6efcf8cd1a5a8432d8649c2451282746, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834444975135164, guid: 6efcf8cd1a5a8432d8649c2451282746, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834444975135164, guid: 6efcf8cd1a5a8432d8649c2451282746, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834444975135164, guid: 6efcf8cd1a5a8432d8649c2451282746, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834444975135164, guid: 6efcf8cd1a5a8432d8649c2451282746, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834444975135164, guid: 6efcf8cd1a5a8432d8649c2451282746, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834444975135164, guid: 6efcf8cd1a5a8432d8649c2451282746, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 114814591536187466, guid: 6efcf8cd1a5a8432d8649c2451282746,
+        type: 2}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 957642572}
+    - target: {fileID: 1997429791270016, guid: 6efcf8cd1a5a8432d8649c2451282746, type: 2}
+      propertyPath: m_Name
+      value: Shredder (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834444975135164, guid: 6efcf8cd1a5a8432d8649c2451282746, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834444975135164, guid: 6efcf8cd1a5a8432d8649c2451282746, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834444975135164, guid: 6efcf8cd1a5a8432d8649c2451282746, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6efcf8cd1a5a8432d8649c2451282746, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1394129963
 GameObject:
   m_ObjectHideFlags: 0
