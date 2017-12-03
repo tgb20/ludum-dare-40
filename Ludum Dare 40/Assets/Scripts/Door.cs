@@ -6,6 +6,7 @@ public class Door : MonoBehaviour {
 
     public DoorMat mat;
     public GameController gameManager;
+    public CharacterMove player;
 
     int boxes = 1;
 
@@ -32,6 +33,7 @@ public class Door : MonoBehaviour {
         {
             boxes += 1;
             hasRecieved = true;
+            player.resetPostion();
             mat.SpawnNewDay(Mathf.RoundToInt(boxCurve.Evaluate(boxes)));
             gameManager.hasDelivered = true;
         }

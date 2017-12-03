@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Newspaper : MonoBehaviour {
 
-	Renderer rend;
+    public Renderer rend;
 
-	Color baseColor;
+    Color[] baseColor = new Color[] { Color.blue, Color.blue, Color.blue };
 
 	bool inStack;
 
 
+
     public GameObject heatBit;
+
+    public Texture[] newsPaperHeaders;
 
 
     public float heat;
@@ -27,18 +30,31 @@ public class Newspaper : MonoBehaviour {
     GameController gameManager;
 
 	void Start(){
-		rend = GetComponent<Renderer> ();
-		baseColor = rend.material.color;
+        for (int i = 0; i < 3; i++)
+        {
+            baseColor[i] = rend.materials[i].color;
+        }
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameController>();
+
+        rend.materials[1].mainTexture = newsPaperHeaders[Random.Range(0, newsPaperHeaders.Length)];
+
         rend.material.SetColor("_EMISSION", Color.red);
 	}
 
-	void OnMouseOver(){
-        rend.material.color = Color.yellow;
-	}
-	void OnMouseExit(){
-		rend.material.color = baseColor;
-	}
+    void OnMouseOver()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            rend.materials[i].color = Color.yellow;
+        }
+    }
+    void OnMouseExit()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            rend.materials[i].color = baseColor[i];
+        }
+    }
 
 	void Update(){
         if (heatUp)
@@ -94,7 +110,7 @@ public class Newspaper : MonoBehaviour {
 
 	public void resetPosition(){
 
-		transform.rotation = Quaternion.identity;
+        transform.rotation = new Quaternion(0,180,0,0);
 	}
 
     private void OnTriggerEnter(Collider other)

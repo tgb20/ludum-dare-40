@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Extinguisher : MonoBehaviour {
 
-    Renderer rend;
+    public Renderer rend;
 
-    Color baseColor;
+    Color[] baseColor = new Color[] {Color.blue, Color.blue, Color.blue};
 
 	// Use this for initialization
 	void Start () {
-        rend = GetComponent<Renderer>();
-        baseColor = rend.material.color;
-		
+        for (int i = 0; i < 3; i++)
+        {
+            baseColor[i] = rend.materials[i].color;
+        }
 	}
 	
 	// Update is called once per frame
@@ -22,11 +23,17 @@ public class Extinguisher : MonoBehaviour {
 
     void OnMouseOver()
     {
-        rend.material.color = Color.yellow;
+        for (int i = 0; i < 3; i++)
+        {
+            rend.materials[i].color = Color.yellow;
+        }
     }
     void OnMouseExit()
     {
-        rend.material.color = baseColor;
+        for (int i = 0; i < 3; i++)
+        {
+            rend.materials[i].color = baseColor[i];
+        }
     }
 
     public void resetPosition()

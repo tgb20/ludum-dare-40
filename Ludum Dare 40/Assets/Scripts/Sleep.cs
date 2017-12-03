@@ -7,6 +7,8 @@ public class Sleep : MonoBehaviour {
 
     public GameObject playerCamera;
 
+    public Door door;
+
 
 
 
@@ -29,7 +31,7 @@ public class Sleep : MonoBehaviour {
             if (Physics.Raycast(ray, out hit, 1))
             {
                 Bed b = hit.collider.GetComponent<Bed>();
-                if (b != null)
+                if (b != null && door.hasRecieved)
                 {
                     b.Sleep();
                 }
