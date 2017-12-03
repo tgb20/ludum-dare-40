@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -12,10 +13,15 @@ public class GameController : MonoBehaviour {
 
     public Text sleepText;
     public Text deliveryText;
+    public Text gameOverText;
 
     public bool hasDelivered;
 
     public int numDays = 1;
+
+    public GameObject gameOver;
+    public GameObject retry;
+    public GameObject quit;
 
 
 
@@ -26,8 +32,8 @@ public class GameController : MonoBehaviour {
         }
         sleepTime -= Time.deltaTime;
 
-        sleepText.text = sleepTime.ToString();
-        deliveryText.text = deliveryTime.ToString();
+        sleepText.text = Mathf.RoundToInt(sleepTime).ToString();
+        deliveryText.text = Mathf.RoundToInt(deliveryTime).ToString();
 
         if(sleepTime < 10){
             sleepText.color = Color.red;
@@ -43,7 +49,24 @@ public class GameController : MonoBehaviour {
 
         if(deliveryTime < 0 || sleepTime < 0 ){
             print("Game Over");
+            gameOver.SetActive(true);
+            retry.SetActive(true);
+            quit.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            gameOverText.text = "You survived " + numDays + " days!";
         }
 
 	}
+
+
+    public void Retry()
+    {
+        SceneManager.LoadSceneAsync("Main");
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    public void Quit()
+    {
+        SceneManager.LoadSceneAsync("MainMenu");
+    }
+
 }

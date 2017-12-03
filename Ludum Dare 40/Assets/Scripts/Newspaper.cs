@@ -43,10 +43,10 @@ public class Newspaper : MonoBehaviour {
 	void Update(){
         if (heatUp)
         {
-            heat += Time.deltaTime * 2;
+            heat += Time.deltaTime * 8;
         }
         else if(heat > 0){
-            heat -= Time.deltaTime * 2;
+            heat -= Time.deltaTime * 8;
         }
 
         if(lightUp){
@@ -111,7 +111,8 @@ public class Newspaper : MonoBehaviour {
             heatUp = true;
         }
         else if(other.gameObject.tag == "Spray"){
-            heat = heat/2;
+            heat = 0;
+            heatBit.SetActive(false);
         }
         else if (other.gameObject.tag == "Sunlight")
         {
