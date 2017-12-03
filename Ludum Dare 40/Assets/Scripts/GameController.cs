@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour {
     public Text sleepText;
     public Text deliveryText;
     public Text gameOverText;
+    public Text Indicator;
 
     public Slider musicVolumeSlider;
     public Slider effectVolumeSlider;
@@ -32,6 +33,8 @@ public class GameController : MonoBehaviour {
     public GameObject retry;
     public GameObject quit;
 
+    public GameObject window;
+
 
     public GameObject sleep;
     public GameObject delivery;
@@ -44,9 +47,15 @@ public class GameController : MonoBehaviour {
     public GameObject effectSlider;
     public GameObject mouseSlider;
     public GameObject credits;
+    public GameObject indicatorText;
     
 
     public GameObject[] papers;
+
+    Color defaultBlue;
+
+    public bool overBed;
+    public bool atDoor;
 
 
     public float musicVolume;
@@ -64,7 +73,31 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    void Start(){
+        defaultBlue = window.GetComponent<Renderer>().material.color;
+    }
+
 	void Update () {
+
+
+        if (overBed && hasDelivered)
+        {
+            Indicator.text = "Sleep";
+        }else if(atDoor && !hasDelivered){
+            Indicator.text = "Open Door";
+        }else{
+            Indicator.text = "";
+        }
+
+        if (!hasDelivered)
+        {
+            window.GetComponent<Renderer>().material.color = defaultBlue;
+            playerCamera.GetComponent<Camera>().backgroundColor = defaultBlue;
+        }else{
+            window.GetComponent<Renderer>().material.color = Color.black;
+            playerCamera.GetComponent<Camera>().backgroundColor = Color.black;
+        }
+
 
         if (musicSlider.activeSelf)
         {
@@ -171,6 +204,7 @@ public class GameController : MonoBehaviour {
         effectSlider.SetActive(!toggle);
         credits.SetActive(!toggle);
         mouseSlider.SetActive(!toggle);
+        indicatorText.SetActive(toggle);
         gameStarted = toggle;
         if(toggle){
             Retry();

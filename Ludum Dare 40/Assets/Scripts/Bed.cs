@@ -20,6 +20,16 @@ public class Bed : MonoBehaviour {
 		
 	}
 
+    private void OnMouseOver()
+    {
+        gameManager.overBed = true;
+    }
+    private void OnMouseExit()
+    {
+        gameManager.overBed = false;
+    }
+
+
 
     public void Sleep(){
         door.hasRecieved = false;

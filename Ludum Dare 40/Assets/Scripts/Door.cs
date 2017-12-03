@@ -26,6 +26,15 @@ public class Door : MonoBehaviour {
 
     }
 
+    private void OnMouseOver()
+    {
+        gameManager.atDoor = true;
+    }
+    private void OnMouseExit()
+    {
+        gameManager.atDoor = false;
+    }
+
 
     public void Recieve()
     {
