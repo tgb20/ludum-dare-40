@@ -7,6 +7,15 @@ public class Shreader : MonoBehaviour {
 
     public GameController gameManager;
 
+    AudioSource aud;
+
+    void Start(){
+        aud = GetComponent<AudioSource>();
+    }
+
+    void Update(){
+        aud.volume = gameManager.effectVolume;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -16,6 +25,10 @@ public class Shreader : MonoBehaviour {
                 gameManager.deliveryTime -= 1;
             }
             gameManager.sleepTime -= 1;
+            if (!aud.isPlaying)
+            {
+                aud.Play();
+            }
             Destroy(collision.gameObject);
 
         }

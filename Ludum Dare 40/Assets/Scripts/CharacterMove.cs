@@ -71,6 +71,7 @@ public class CharacterMove : MonoBehaviour {
     public void resetPostion(){
         transform.rotation = originRot;
         transform.position = orginPos;
+        rigi.velocity = Vector3.zero;
     }
 
 

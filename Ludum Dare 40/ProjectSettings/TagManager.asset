@@ -9,6 +9,7 @@ TagManager:
   - Heater
   - Spray
   - Sunlight
+  - Paper
   layers:
   - Default
   - TransparentFX

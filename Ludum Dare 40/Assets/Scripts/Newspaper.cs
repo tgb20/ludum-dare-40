@@ -10,7 +10,10 @@ public class Newspaper : MonoBehaviour {
 
 	bool inStack;
 
+    public AudioClip crushed;
+    public AudioClip crackling;
 
+    AudioSource aud;
 
     public GameObject heatBit;
 
@@ -39,6 +42,9 @@ public class Newspaper : MonoBehaviour {
         rend.materials[1].mainTexture = newsPaperHeaders[Random.Range(0, newsPaperHeaders.Length)];
 
         rend.material.SetColor("_EMISSION", Color.red);
+
+        aud = GetComponent<AudioSource>();
+        aud.volume = gameManager.effectVolume;
 	}
 
     void OnMouseOver()
@@ -57,6 +63,7 @@ public class Newspaper : MonoBehaviour {
     }
 
 	void Update(){
+
         if (heatUp)
         {
             heat += Time.deltaTime * 8;
@@ -80,8 +87,14 @@ public class Newspaper : MonoBehaviour {
 
         if(heat > 20){
             heatBit.SetActive(true);
+            if (!aud.isPlaying)
+            {
+                aud.Play();
+            }
         }else{
             heatBit.SetActive(false);
+
+            aud.Stop();
         }
 
 
@@ -121,6 +134,7 @@ public class Newspaper : MonoBehaviour {
                 gameManager.deliveryTime -= 1;
             }
             gameManager.sleepTime -= 1;
+            AudioSource.PlayClipAtPoint(crushed, transform.position, gameManager.effectVolume);
             Destroy(gameObject);
         }
         else if(other.gameObject.tag == "Heater"){

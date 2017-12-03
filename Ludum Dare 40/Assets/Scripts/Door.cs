@@ -8,7 +8,7 @@ public class Door : MonoBehaviour {
     public GameController gameManager;
     public CharacterMove player;
 
-    int boxes = 1;
+    public int boxes = 1;
 
     public bool hasRecieved;
 
