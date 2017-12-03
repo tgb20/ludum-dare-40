@@ -21,8 +21,13 @@ public class MouseLook : MonoBehaviour {
 
     Rigidbody rigi;
 
+
     void Update()
     {
+
+        sensitivityX = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameController>().mouseSensitivity;
+        sensitivityY = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameController>().mouseSensitivity;
+
         if (axes == RotationAxes.MouseXAndY)
         {
             // Read the mouse input axis
@@ -57,7 +62,6 @@ public class MouseLook : MonoBehaviour {
 
     void Start()
     {
-
         rigi = GetComponent<Rigidbody>();
 		Cursor.lockState = CursorLockMode.Locked;
 

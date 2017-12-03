@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour {
 
     public Slider musicVolumeSlider;
     public Slider effectVolumeSlider;
+    public Slider mouseSpeed;
 
     public bool hasDelivered;
 
@@ -41,6 +42,8 @@ public class GameController : MonoBehaviour {
     public GameObject cursor;
     public GameObject musicSlider;
     public GameObject effectSlider;
+    public GameObject mouseSlider;
+    public GameObject credits;
     
 
     public GameObject[] papers;
@@ -48,6 +51,7 @@ public class GameController : MonoBehaviour {
 
     public float musicVolume;
     public float effectVolume;
+    public float mouseSensitivity = 10;
 
     public bool gameStarted;
 
@@ -66,6 +70,7 @@ public class GameController : MonoBehaviour {
         {
             musicVolume = musicVolumeSlider.value;
             effectVolume = effectVolumeSlider.value;
+            mouseSensitivity = mouseSpeed.value;
         }
 
         GetComponent<AudioSource>().volume = musicVolume;
@@ -164,6 +169,8 @@ public class GameController : MonoBehaviour {
         howTotext.SetActive(!toggle);
         musicSlider.SetActive(!toggle);
         effectSlider.SetActive(!toggle);
+        credits.SetActive(!toggle);
+        mouseSlider.SetActive(!toggle);
         gameStarted = toggle;
         if(toggle){
             Retry();
