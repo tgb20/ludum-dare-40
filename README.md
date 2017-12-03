@@ -40,3 +40,5 @@ I have added the window which instead of rain has sunlight, if the paper sits in
 This is exactly as it says. The game now works as a game and tomorrow I will make it look pretty. Going to start with some basic furniture peices and then the room. Also need to make the menus look nicer. I want to have an interactive main menu, when it loads you see the game name in newspapers and then it falls down. Pretty happy with things so far. Been 24 hours since we started and I can say I have a working game!
 ## Models Models Models!
 Everything now has its own model. Also added walls and a sky to the game. Next step is a menu with some options. I removed the menu scene I had. I think everything will look better if its all on one scene.
+## A few Commits
+In the last stages so haven't really kept track of this. Game is now done and prepared for submission. Testing on all platforms before I submit
